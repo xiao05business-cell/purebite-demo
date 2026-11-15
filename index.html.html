@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PUREBITE — Clean Ingredients, Real Food</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<script>tailwind.config={theme:{extend:{fontFamily:{sans:['Outfit','system-ui','sans-serif']},colors:{cream:'#FAF8F5',ink:'#1C1917',forest:'#15803D',terra:'#EA580C'}}}}</script>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
+body{background:#FAF8F5;color:#1C1917;font-family:Outfit,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#fff;z-index:60}
+.card{background:#fff;border-radius:1rem;box-shadow:0 1px 2px rgba(28,25,23,.05),0 8px 24px -12px rgba(28,25,23,.12);transition:transform .25s,box-shadow .25s}
+.card.h:hover{transform:translateY(-4px);box-shadow:0 14px 32px -12px rgba(28,25,23,.22)}
+.btn{background:#15803D;color:#fff;font-weight:700;border-radius:.75rem;padding:.7rem 1.2rem;transition:transform .15s,background .15s}
+.btn:hover{background:#166534;transform:translateY(-1px)}
+.btn:active{transform:scale(.98)}
+.btn-t{background:#EA580C}.btn-t:hover{background:#C2410C}
+.btn-o{border:1.5px solid #1C1917;font-weight:700;border-radius:.75rem;padding:.7rem 1.2rem;transition:all .15s}
+.btn-o:hover{background:#1C1917;color:#fff}
+.chip{border:1.5px solid #e7e5e4;border-radius:.6rem;padding:.25rem .65rem;font-size:.8rem;font-weight:600;transition:all .15s}
+.chip:hover{border-color:#15803D}
+.chip.on{background:#15803D;border-color:#15803D;color:#fff}
+.tab{padding:.55rem 1.1rem;border-radius:999px;background:#fff;border:1.5px solid #e7e5e4;font-weight:600;font-size:.9rem;white-space:nowrap;transition:all .15s}
+.tab:hover{border-color:#15803D}
+.tab.on{background:#1C1917;color:#fff;border-color:#1C1917}
+.in{width:100%;background:#fff;border:1.5px solid #e7e5e4;border-radius:.75rem;padding:.7rem .9rem;font:inherit;font-size:.95rem}
+.in:focus,button:focus-visible,a:focus-visible{outline:2px solid #EA580C;outline-offset:2px}
+label{display:block;font-size:.8rem;font-weight:600;color:#57534e;margin-bottom:.3rem}
+.sx{overflow-x:auto;scrollbar-width:none}
+.bar{height:.5rem;background:#e7e5e4;border-radius:99px;overflow:hidden}
+.bar>i{display:block;height:100%;background:#15803D;border-radius:99px;transition:width .4s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.bob{animation:bob 5s ease-in-out infinite}.bob2{animation-delay:-2s}.bob3{animation-delay:-3.5s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bg-forest text-white text-center text-sm font-semibold py-2 px-3">Free Delivery on Orders Above ₹499 &nbsp;|&nbsp; 100% Natural Ingredients</div>
+
+<header class="sticky z-50 bg-white/95 backdrop-blur border-b border-stone-200" style="top:env(safe-area-inset-top,0px)">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3">
+    <a href="#top" class="text-2xl font-extrabold tracking-tight text-forest">PURE<span class="text-terra">BITE</span></a>
+    <nav id="nl" class="hidden lg:flex gap-5 text-sm font-semibold ml-6"></nav>
+    <div class="order-3 sm:order-2 w-full sm:w-auto sm:flex-1 sm:max-w-xs sm:ml-auto">
+      <input id="q" type="search" class="in !py-2" placeholder="Search snacks, spreads, oats…" aria-label="Search products">
+    </div>
+    <button id="cartBtn" class="order-2 sm:order-3 ml-auto sm:ml-0 relative btn-o !py-2 !px-3" aria-label="Open cart">🛒 <span class="font-bold">Cart</span>
+      <span id="cnt" class="absolute -top-2 -right-2 bg-terra text-white text-xs font-bold rounded-full min-w-[1.4rem] h-[1.4rem] grid place-items-center">0</span></button>
+  </div>
+  <nav id="nm" class="lg:hidden sx flex gap-2 px-4 pb-3"></nav>
+</header>
+
+<main id="top">
+<section class="max-w-6xl mx-auto px-4 pt-10 pb-16 md:pt-16 grid md:grid-cols-2 gap-10 items-center">
+  <div>
+    <h1 class="text-5xl sm:text-6xl font-extrabold leading-[1.02] tracking-tight">Real Ingredients. Zero Junk. Delivered Fresh.</h1>
+    <p class="mt-5 text-lg text-stone-600 max-w-md">Protein-packed snacks, nut butters and breakfast staples made with ingredients you can pronounce. Every label lists what’s in it, and nothing else.</p>
+    <div class="mt-7 flex flex-wrap gap-3">
+      <button id="bs" class="btn btn-t">Shop Bestsellers</button>
+      <a href="#why" class="btn-o">Explore Nutrition</a>
+    </div>
+    <ul class="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-stone-700">
+      <li><span class="text-forest">✓</span> No Preservatives</li><li><span class="text-forest">✓</span> Lab Tested</li><li><span class="text-forest">✓</span> FSSAI Certified</li>
+    </ul>
+  </div>
+  <div class="relative h-80 md:h-[26rem]" aria-hidden="true">
+    <div class="absolute inset-0 rounded-[2.5rem]" style="background:linear-gradient(135deg,#fde68a,#fdba74 55%,#86efac)"></div>
+    <div class="bob absolute left-[8%] top-[10%] card w-40 h-40 grid place-items-center text-7xl">🥜</div>
+    <div class="bob bob2 absolute right-[8%] top-[22%] card w-36 h-36 grid place-items-center text-6xl">🍿</div>
+    <div class="bob bob3 absolute left-[30%] bottom-[8%] card w-44 h-44 grid place-items-center text-7xl">🥣</div>
+  </div>
+</section>
+
+<section id="shop" class="max-w-6xl mx-auto px-4 py-10">
+  <div class="flex flex-wrap items-end justify-between gap-3 mb-5">
+    <h2 class="text-3xl md:text-4xl font-extrabold">Shop the range</h2>
+    <div class="flex items-center gap-2"><label for="sort" class="!mb-0">Sort</label>
+      <select id="sort" class="in !w-auto !py-2"><option value="f">Featured</option><option value="r">Top rated</option><option value="pl">Price: low to high</option><option value="ph">Price: high to low</option></select></div>
+  </div>
+  <div id="tabs" class="sx flex gap-2 mb-6"></div>
+  <p id="res" class="text-sm text-stone-500 mb-4"></p>
+  <div id="grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  <div id="none" class="hidden card p-10 text-center"><p class="font-bold text-lg">No products match “<span id="nq"></span>”</p><p class="text-stone-500 mt-1">Try a different word or pick All Products.</p><button id="reset" class="btn mt-4">Show all products</button></div>
+</section>
+
+<section id="why" class="max-w-6xl mx-auto px-4 py-16">
+  <h2 class="text-3xl md:text-4xl font-extrabold">Why choose PureBite</h2>
+  <p class="text-stone-600 mt-2 mb-8 max-w-xl">Flip any supermarket snack and compare. Here’s how we stack up.</p>
+  <div class="card overflow-x-auto"><table class="w-full text-left min-w-[480px]">
+    <thead><tr class="border-b border-stone-200"><th class="p-4"></th><th class="p-4 text-forest font-extrabold">PureBite</th><th class="p-4 text-stone-500 font-bold">Regular supermarket snacks</th></tr></thead>
+    <tbody id="cmp"></tbody></table></div>
+  <h3 class="text-2xl font-extrabold mt-14 mb-2">Where it comes from</h3>
+  <p class="text-stone-600 mb-6">Tap a card to see how each ingredient is sourced.</p>
+  <div id="org" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+</section>
+
+<section id="reviews" class="max-w-6xl mx-auto px-4 py-16">
+  <div class="flex flex-wrap items-end justify-between gap-3 mb-8"><h2 class="text-3xl md:text-4xl font-extrabold">Loved by 40,000+ snackers</h2><p class="font-bold"><span class="text-terra">★★★★★</span> 4.8 average from verified buyers</p></div>
+  <div id="rv" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+</section>
+
+<section id="b2b" class="max-w-6xl mx-auto px-4 py-16">
+  <div class="rounded-[2rem] bg-ink text-white p-6 md:p-12 grid md:grid-cols-2 gap-10">
+    <div><h2 class="text-3xl md:text-4xl font-extrabold">Stock PureBite in your store, cafe or gym</h2>
+      <p class="mt-4 text-stone-300">Wholesale pricing, case-pack minimums as low as 24 units, and a dedicated account manager. Tell us about your business and we’ll send a rate card within one working day.</p></div>
+    <form id="bf" class="grid sm:grid-cols-2 gap-4 text-ink" novalidate>
+      <div><label class="!text-stone-300" for="bn">Business name</label><input id="bn" class="in" autocomplete="organization"></div>
+      <div><label class="!text-stone-300" for="bc">Contact person</label><input id="bc" class="in" autocomplete="name"></div>
+      <div><label class="!text-stone-300" for="be">Email</label><input id="be" type="email" class="in" autocomplete="email"></div>
+      <div><label class="!text-stone-300" for="bt">Business type</label><select id="bt" class="in"><option>Retail store</option><option>Cafe or restaurant</option><option>Gym or studio</option><option>Corporate pantry</option><option>Other</option></select></div>
+      <div class="sm:col-span-2"><label class="!text-stone-300" for="bm">Expected monthly order</label><select id="bm" class="in"><option>Under ₹25,000</option><option>₹25,000 – ₹1 lakh</option><option>Above ₹1 lakh</option></select></div>
+      <button class="btn btn-t sm:col-span-2" type="submit">Request wholesale rates</button>
+      <p id="be1" class="sm:col-span-2 text-orange-300 text-sm hidden">Enter your business name, contact person and a valid email.</p>
+      <p id="bo" class="sm:col-span-2 text-green-300 font-semibold hidden"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="bg-white border-t border-stone-200">
+  <div class="max-w-6xl mx-auto px-4 py-12 grid md:grid-cols-4 gap-8 text-sm text-stone-600">
+    <div class="md:col-span-2"><p class="text-2xl font-extrabold text-forest">PURE<span class="text-terra">BITE</span></p>
+      <p class="mt-2 max-w-xs">Clean ingredients, real food. Made in small batches and delivered across India.</p>
+      <form id="nf" class="flex gap-2 mt-4 max-w-sm" novalidate><input id="ne" type="email" class="in" placeholder="Your email for 15% off" aria-label="Email for newsletter"><button class="btn shrink-0" type="submit">Join</button></form>
+      <p id="nm2" class="text-sm mt-2 hidden"></p></div>
+    <div class="grid gap-2 content-start"><p class="font-bold text-ink">Shop</p><a class="hover:text-forest" href="#shop">All products</a><a class="hover:text-forest" href="#why">Why PureBite</a><a class="hover:text-forest" href="#reviews">Reviews</a><a class="hover:text-forest" href="#b2b">Wholesale</a></div>
+    <div><p class="font-bold text-ink mb-2">Our promise</p><div class="flex flex-wrap gap-2 text-xs font-bold">
+      <span class="border border-stone-300 rounded-lg px-2 py-1">FSSAI Certified</span><span class="border border-stone-300 rounded-lg px-2 py-1">Lab Tested</span><span class="border border-stone-300 rounded-lg px-2 py-1">100% Vegetarian</span><span class="border border-stone-300 rounded-lg px-2 py-1">No Palm Oil</span></div></div>
+  </div>
+  <p class="text-center text-xs text-stone-500 pb-8 px-4">© 2026 PureBite. Nutrition values are approximate and per 100 g (or 100 ml for beverages).</p>
+</footer>
+
+<div id="shade" class="fixed inset-0 bg-ink/50 z-[70] hidden"></div>
+<aside id="drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-cream z-[80] flex flex-col translate-x-full transition-transform duration-300" aria-label="Shopping cart">
+  <div class="p-5 flex items-center justify-between bg-white border-b border-stone-200" style="padding-top:calc(1.25rem + env(safe-area-inset-top,0px))"><h3 class="text-xl font-extrabold">Your cart</h3><button id="cx" class="btn-o !py-1 !px-3" aria-label="Close cart">✕</button></div>
+  <div id="ship" class="p-5 bg-white border-b border-stone-200"></div>
+  <div id="items" class="flex-1 overflow-y-auto p-5 space-y-3"></div>
+  <div id="bill" class="p-5 bg-white border-t border-stone-200" style="padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px))"></div>
+</aside>
+<div id="modal" class="fixed inset-0 z-[90] hidden items-end sm:items-center justify-center p-0 sm:p-4"><div id="mshade" class="absolute inset-0 bg-ink/60"></div><div id="mb" class="relative bg-cream w-full sm:max-w-2xl max-h-[92vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl p-6" role="dialog" aria-modal="true"></div></div>
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] bg-ink text-white font-semibold px-4 py-2 rounded-xl text-sm opacity-0 pointer-events-none transition-opacity"></div>
+
+<script>
+const $=s=>document.querySelector(s),inr=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+const CATS=[["all","All Products"],["hp","High-Protein Snacks"],["nb","Nut Butters & Spreads"],["bo","Breakfast & Oats"],["bev","Healthy Beverages"],["combo","Value Combos"]];
+// [name, emoji, cat, [grad], sizes[[label,price,mrp]], rating, reviews, nutrition[kcal,protein,carbs,fat,sugar,fibre], ingredients, tag]
+const P=[
+["Dark Chocolate Peanut Butter","🥜","nb",["#fde68a","#b45309"],[["250 g",249,299],["500 g",449,549],["1 kg",799,999]],4.8,642,[590,27,17,48,5,7],"Roasted peanuts (90%), 70% dark chocolate (9%), jaggery powder, rock salt.","Bestseller"],
+["Roasted Makhana Peri-Peri","🍿","hp",["#fecaca","#dc2626"],[["60 g",99,129],["120 g",179,249],["240 g",329,479]],4.7,518,[390,10,72,5,1,8],"Fox nuts (makhana), cold-pressed olive oil, peri-peri seasoning (red chilli, garlic, onion, oregano, paprika), rock salt.","Bestseller"],
+["High-Protein Oats","🥣","bo",["#fef3c7","#d97706"],[["500 g",229,279],["1 kg",429,549]],4.6,377,[380,24,52,8,2,9],"Rolled oats (65%), pea protein (20%), flaxseeds, pumpkin seeds, cinnamon.","New"],
+["Millet Energy Bars","🍫","hp",["#d9f99d","#4d7c0f"],[["Pack of 6",299,399],["Pack of 12",549,799]],4.5,289,[420,12,56,17,16,6],"Dates, ragi flakes, foxtail millet puffs, almonds, pumpkin seeds, cocoa nibs.",""],
+["Cold-Pressed Almond Milk","🥛","bev",["#f5f5f4","#a8a29e"],[["250 ml",89,109],["500 ml",169,219],["1 L",319,429]],4.4,203,[38,1.4,2.2,2.8,0.5,0.6],"Almonds (8%), filtered water, rock salt.","Unsweetened"],
+["Seed Trail Mix","🌰","hp",["#fed7aa","#9a3412"],[["250 g",279,349],["500 g",519,699]],4.7,431,[520,19,28,38,9,9],"Pumpkin seeds, sunflower seeds, almonds, dried cranberries, raisins, watermelon seeds.","Bestseller"],
+["Quinoa Puffs","🌾","hp",["#fde68a","#ca8a04"],[["100 g",139,179],["200 g",259,349]],4.3,164,[375,14,64,6,1,7],"Puffed quinoa (85%), cold-pressed sunflower oil, pink salt, herb seasoning.",""],
+["Classic Almond Butter","🌰","nb",["#fed7aa","#c2410c"],[["200 g",399,499],["400 g",749,949]],4.8,356,[614,21,19,56,4,10],"Roasted almonds (100%), a pinch of rock salt.",""],
+["Fruit & Nut Muesli","🥗","bo",["#fecdd3","#be123c"],[["400 g",299,379],["800 g",549,729]],4.5,247,[390,11,66,9,12,9],"Rolled oats, wheat flakes, raisins, almonds, cashews, sunflower seeds, dried papaya.",""],
+["Ragi Choco Porridge Mix","🍵","bo",["#d6d3d1","#57534e"],[["250 g",169,219],["500 g",309,419]],4.4,138,[365,10,72,4,14,8],"Ragi flour (70%), jaggery powder, cocoa powder, cardamom.","New"],
+["Oat Cold Brew Coffee","☕","bev",["#d6bcab","#78350f"],[["250 ml",129,169],["750 ml",329,449]],4.6,172,[30,0.9,5,0.6,4,0],"Cold brew coffee (70%), oat milk, jaggery syrup.",""],
+["Protein Starter Combo","🎁","combo",["#bbf7d0","#15803d"],[["1 box",599,799]],4.7,226,null,"Dark Chocolate Peanut Butter 250 g, Millet Energy Bars (pack of 6), Roasted Makhana Peri-Peri 60 g.","Save 25%"],
+["Breakfast Box","📦","combo",["#fed7aa","#ea580c"],[["Regular",649,859],["Family (2×)",1199,1699]],4.6,141,null,"High-Protein Oats 500 g, Fruit & Nut Muesli 400 g, Classic Almond Butter 200 g.","Save 24%"]
+].map((a,i)=>({id:i,n:a[0],e:a[1],c:a[2],g:a[3],s:a[4],r:a[5],rc:a[6],nu:a[7],ing:a[8],tag:a[9]}));
+const COMPARE=[["No palm oil",1,0],["No refined sugar",1,0],["High protein (10 g+ per 100 g)",1,0],["Clean label (short, readable ingredients)",1,0],["No artificial preservatives",1,0],["Lab-tested every batch",1,0]];
+const ORIGIN=[["🥜","Peanuts","Saurashtra, Gujarat","Sourced from farmer groups growing groundnuts in red-soil fields, sorted by hand and slow-roasted in small batches."],["🌸","Makhana","Mithila, Bihar","Fox nuts are harvested from pond-grown lotus plants, then popped by hand over low heat before seasoning."],["🌾","Millets & Ragi","Karnataka","Rain-fed millets grown with minimal irrigation, stone-milled to keep the bran and fibre."],["🍯","Jaggery","Kolhapur, Maharashtra","Unrefined cane jaggery made in open pans, used in place of refined sugar for gentle sweetness."],["🌰","Almonds","California, USA","Whole almonds from large orchards, cold-pressed or roasted without added oils for butters and milk."],["🌿","Seeds","Madhya Pradesh","Pumpkin and sunflower seeds from contract farms, cleaned and dry-roasted in-house with no added oil."]];
+const REV=[["Aarti M.","Mumbai",5,"The peanut butter has actual peanuts in it. Rich, slightly bitter chocolate, no oil slick on top. Our family of four finishes a jar in a week.","Dark Chocolate Peanut Butter","#15803D"],["Rohan K.","Bengaluru",5,"I run a small gym and ordered makhana and trail mix for the front desk. Members now ask for refills. Peri-peri has proper heat.","Roasted Makhana Peri-Peri","#EA580C"],["Sneha P.","Pune",4,"Oats cook in three minutes and keep me full until lunch. I’d love a bigger pack size, but the taste is great.","High-Protein Oats","#B45309"],["Imran S.","Hyderabad",5,"Finally an energy bar that isn’t candy. Two bars on a long ride and I was fine. Dates and millets, that’s it.","Millet Energy Bars","#4D7C0F"],["Divya R.","Chennai",5,"Almond butter is smooth and not sweet. Great on toast and in smoothies. Delivery was quick and well packed.","Classic Almond Butter","#BE123C"],["Karan T.","Delhi",4,"Starter combo was a good way to try everything. Quinoa puffs were my surprise favourite. Will reorder.","Protein Starter Combo","#0F766E"]];
+const st={cat:"all",q:"",sort:"f",sel:{},cart:[],promo:null};
+try{st.cart=JSON.parse(localStorage.getItem("purebite-cart")||"[]").filter(i=>P[i.id]&&P[i.id].s[i.s])}catch(e){}
+const save=()=>{try{localStorage.setItem("purebite-cart",JSON.stringify(st.cart))}catch(e){}};
+const si=id=>st.sel[id]||0,disc=(s)=>Math.round((1-s[1]/s[2])*100);
+const stars=r=>"★".repeat(Math.round(r))+"☆".repeat(5-Math.round(r));
+let tt;const toast=m=>{const t=$("#toast");t.textContent=m;t.style.opacity=1;clearTimeout(tt);tt=setTimeout(()=>t.style.opacity=0,1700)};
+
+// nav & tabs
+$("#nl").innerHTML=CATS.slice(1).map(c=>`<a href="#shop" data-c="${c[0]}" class="hover:text-forest">${c[1]}</a>`).join("");
+$("#nm").innerHTML=CATS.slice(1).map(c=>`<a href="#shop" data-c="${c[0]}" class="tab !py-1.5">${c[1]}</a>`).join("");
+$("#tabs").innerHTML=CATS.map(c=>`<button class="tab" data-c="${c[0]}">${c[1]}</button>`).join("");
+document.addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(b){st.cat=b.dataset.c;draw()}});
+$("#q").oninput=e=>{const was=st.q;st.q=e.target.value;draw();if(!was&&st.q)$("#shop").scrollIntoView()};
+$("#sort").onchange=e=>{st.sort=e.target.value;draw()};
+$("#bs").onclick=()=>{st.cat="all";st.sort="r";st.q="";$("#q").value="";$("#sort").value="r";draw();$("#shop").scrollIntoView()};
+$("#reset").onclick=()=>{st.cat="all";st.q="";$("#q").value="";draw()};
+
+function draw(){
+  document.querySelectorAll("#tabs .tab").forEach(b=>b.classList.toggle("on",b.dataset.c===st.cat));
+  const q=st.q.trim().toLowerCase();
+  let L=P.filter(p=>(st.cat==="all"||p.c===st.cat)&&(!q||(p.n+" "+p.ing).toLowerCase().includes(q)));
+  const pr=p=>p.s[0][1];
+  if(st.sort==="r")L.sort((a,b)=>b.r-a.r||b.rc-a.rc);if(st.sort==="pl")L.sort((a,b)=>pr(a)-pr(b));if(st.sort==="ph")L.sort((a,b)=>pr(b)-pr(a));
+  $("#res").textContent=`Showing ${L.length} product${L.length===1?"":"s"}`;
+  $("#none").classList.toggle("hidden",L.length>0);$("#nq").textContent=st.q;
+  $("#grid").innerHTML=L.map(p=>{const s=p.s[si(p.id)];return `<article class="card h overflow-hidden flex flex-col">
+  <button data-q="${p.id}" class="relative h-44 grid place-items-center text-7xl" style="background:linear-gradient(135deg,${p.g[0]},${p.g[1]}55)" aria-label="Quick view ${p.n}">${p.e}
+    <span class="absolute top-3 left-3 bg-terra text-white text-xs font-bold rounded-full px-2.5 py-1">${disc(s)}% OFF</span>${p.tag?`<span class="absolute top-3 right-3 bg-white text-ink text-xs font-bold rounded-full px-2.5 py-1">${p.tag}</span>`:""}</button>
+  <div class="p-5 flex flex-col flex-1"><h3 class="font-extrabold text-lg leading-tight">${p.n}</h3>
+  <p class="text-sm mt-1"><span class="text-terra">${stars(p.r)}</span> <b>${p.r}</b> <span class="text-stone-500">(${p.rc})</span></p>
+  <div class="flex flex-wrap gap-2 mt-3">${p.s.map((x,i)=>`<button data-sz="${p.id}:${i}" class="chip ${i===si(p.id)?"on":""}">${x[0]}</button>`).join("")}</div>
+  <p class="mt-3"><span class="text-2xl font-extrabold">${inr(s[1])}</span> <span class="text-stone-400 line-through ml-1">${inr(s[2])}</span></p>
+  <div class="grid grid-cols-2 gap-2 mt-auto pt-4"><button data-q="${p.id}" class="btn-o !px-2 text-sm">Nutrition Facts</button><button data-add="${p.id}" class="btn !px-2 text-sm">Add to Cart</button></div></div></article>`}).join("");
+}
+$("#grid").onclick=e=>{
+  const z=e.target.closest("[data-sz]"),a=e.target.closest("[data-add]"),q=e.target.closest("[data-q]");
+  if(z){const[id,i]=z.dataset.sz.split(":");st.sel[id]=+i;draw()}
+  else if(a)add(+a.dataset.add);else if(q)openProduct(+q.dataset.q);
+};
+
+// modals
+const modal=h=>{$("#mb").innerHTML=h;$("#modal").classList.remove("hidden");$("#modal").classList.add("flex")};
+const closeM=()=>{$("#modal").classList.add("hidden");$("#modal").classList.remove("flex")};
+$("#mshade").onclick=closeM;
+function openProduct(id){
+  const p=P[id],s=p.s[si(id)],n=p.nu;
+  const row=(l,v,u,max)=>`<div><div class="flex justify-between text-sm font-semibold"><span>${l}</span><span>${v}${u}</span></div><div class="bar mt-1"><i style="width:${Math.min(100,v/max*100)}%"></i></div></div>`;
+  modal(`<div class="flex justify-between items-start gap-4"><div class="flex items-center gap-4"><span class="text-5xl w-20 h-20 rounded-2xl grid place-items-center shrink-0" style="background:linear-gradient(135deg,${p.g[0]},${p.g[1]}55)">${p.e}</span><div><h3 class="text-2xl font-extrabold leading-tight">${p.n}</h3><p class="text-sm"><span class="text-terra">${stars(p.r)}</span> ${p.r} (${p.rc} reviews)</p></div></div><button id="mx" class="btn-o !py-1 !px-3" aria-label="Close">✕</button></div>
+  <div class="mt-5 grid sm:grid-cols-2 gap-6"><div>
+  <h4 class="font-extrabold mb-3">Nutrition facts <span class="text-stone-500 font-medium text-sm">per 100 ${p.c==="bev"?"ml":"g"}</span></h4>
+  ${n?`<p class="text-4xl font-extrabold text-forest mb-4">${n[0]} <span class="text-base text-stone-500 font-semibold">kcal</span></p><div class="space-y-3">${row("Protein",n[1],"g",30)}${row("Carbohydrates",n[2],"g",80)}${row("  of which sugars",n[4],"g",30)}${row("Fat",n[3],"g",60)}${row("Dietary fibre",n[5],"g",15)}</div>`:`<p class="text-stone-600 text-sm">This is a bundle, so nutrition varies by item. Open each product on its own page card to see its facts.</p>`}</div>
+  <div><h4 class="font-extrabold mb-3">${n?"Ingredients":"What’s in the box"}</h4><p class="text-sm text-stone-700">${p.ing}</p>
+  <div class="flex flex-wrap gap-2 mt-4">${p.s.map((x,i)=>`<button data-msz="${i}" class="chip ${i===si(id)?"on":""}">${x[0]}</button>`).join("")}</div>
+  <p class="mt-3"><span class="text-2xl font-extrabold">${inr(s[1])}</span> <span class="text-stone-400 line-through ml-1">${inr(s[2])}</span> <span class="text-terra font-bold text-sm ml-1">${disc(s)}% off</span></p>
+  <button data-madd="${id}" class="btn w-full mt-4">Add to Cart</button></div></div>`);
+  $("#mx").onclick=closeM;
+  $("#mb").onclick=e=>{const z=e.target.closest("[data-msz]"),a=e.target.closest("[data-madd]");if(z){st.sel[id]=+z.dataset.msz;draw();openProduct(id)}if(a){add(id);closeM()}};
+}
+
+// cart
+const FREE=499,SHIP=49;
+function totals(){
+  let sub=0,mrp=0,n=0;st.cart.forEach(i=>{const s=P[i.id].s[i.s];sub+=s[1]*i.q;mrp+=s[2]*i.q;n+=i.q});
+  const d=st.promo?Math.round(sub*.15):0,after=sub-d,ship=n===0||after>=FREE?0:SHIP;
+  return{sub,mrp,n,d,after,ship,total:after+ship,saved:mrp-after};
+}
+function add(id,s=si(id)){const f=st.cart.find(i=>i.id===id&&i.s===s);f?f.q++:st.cart.push({id,s,q:1});save();renderCart();toast(P[id].n+" added to cart")}
+function renderCart(){
+  const t=totals();$("#cnt").textContent=t.n;
+  const pct=Math.min(100,t.after/FREE*100);
+  $("#ship").innerHTML=t.n===0?`<p class="text-sm font-semibold">Free delivery on orders above ${inr(FREE)}</p><div class="bar mt-2"><i style="width:0"></i></div>`:t.after>=FREE?`<p class="text-sm font-bold text-forest">🎉 You’ve unlocked free delivery</p><div class="bar mt-2"><i style="width:100%"></i></div>`:`<p class="text-sm font-semibold">Add <b class="text-terra">${inr(FREE-t.after)}</b> more for free delivery</p><div class="bar mt-2"><i style="width:${pct}%"></i></div>`;
+  $("#items").innerHTML=st.cart.length?st.cart.map((i,k)=>{const p=P[i.id],s=p.s[i.s];return `<div class="card p-3 flex gap-3"><span class="w-16 h-16 rounded-xl grid place-items-center text-3xl shrink-0" style="background:linear-gradient(135deg,${p.g[0]},${p.g[1]}55)">${p.e}</span><div class="flex-1 min-w-0"><div class="flex justify-between gap-2"><p class="font-bold leading-tight">${p.n}</p><button data-rm="${k}" class="text-stone-400 hover:text-terra text-sm" aria-label="Remove ${p.n}">✕</button></div><p class="text-xs text-stone-500">${s[0]}</p><div class="flex items-center justify-between mt-2"><div class="flex items-center gap-2"><button data-qty="${k}:-1" class="chip !px-2.5" aria-label="Decrease">−</button><b class="w-6 text-center">${i.q}</b><button data-qty="${k}:1" class="chip !px-2.5" aria-label="Increase">+</button></div><b>${inr(s[1]*i.q)}</b></div></div></div>`}).join(""):`<div class="text-center py-12"><p class="text-5xl">🧺</p><p class="font-bold mt-3">Your cart is empty</p><p class="text-stone-500 text-sm">Add a few snacks to get started.</p><button data-close class="btn mt-4">Keep shopping</button></div>`;
+  $("#bill").innerHTML=st.cart.length?`<div class="flex gap-2"><input id="pc" class="in !py-2 uppercase" placeholder="Promo code" value="${st.promo||""}" aria-label="Promo code"><button id="pa" class="btn-o !py-2 shrink-0">${st.promo?"Remove":"Apply"}</button></div><p id="pm" class="text-xs mt-1 min-h-[1rem] ${st.promo?"text-forest font-semibold":"text-stone-500"}">${st.promo?"FIRST15 applied: 15% off":"Try FIRST15 for 15% off"}</p>
+  <dl class="text-sm space-y-1.5 mt-2"><div class="flex justify-between"><dt>Subtotal</dt><dd>${inr(t.sub)}</dd></div>${t.d?`<div class="flex justify-between text-forest"><dt>Promo (FIRST15)</dt><dd>−${inr(t.d)}</dd></div>`:""}<div class="flex justify-between"><dt>Delivery</dt><dd>${t.ship?inr(t.ship):"Free"}</dd></div><div class="flex justify-between font-extrabold text-lg pt-2 border-t border-stone-200"><dt>Total</dt><dd>${inr(t.total)}</dd></div></dl>
+  ${t.saved>0?`<p class="text-xs text-forest font-semibold mt-1">You’re saving ${inr(t.saved)} on this order</p>`:""}<button id="co" class="btn btn-t w-full mt-3">Checkout</button>`:"";
+}
+$("#items").onclick=e=>{
+  const r=e.target.closest("[data-rm]"),q=e.target.closest("[data-qty]");
+  if(r)st.cart.splice(+r.dataset.rm,1);
+  if(q){const[k,d]=q.dataset.qty.split(":");st.cart[k].q+=+d;if(st.cart[k].q<=0)st.cart.splice(k,1)}
+  if(e.target.closest("[data-close]"))return openC(false);
+  save();renderCart();
+};
+$("#bill").onclick=e=>{
+  if(e.target.closest("#pa")){
+    if(st.promo){st.promo=null;renderCart();return}
+    const v=$("#pc").value.trim().toUpperCase();
+    if(v==="FIRST15"){st.promo=v;renderCart();toast("Promo applied")}else{$("#pm").textContent=v?"That code isn’t valid. Try FIRST15.":"Enter a promo code first.";$("#pm").className="text-xs mt-1 text-terra font-semibold"}
+  }
+  if(e.target.closest("#co"))checkout();
+};
+const openC=o=>{$("#drawer").classList.toggle("translate-x-full",!o);$("#shade").classList.toggle("hidden",!o)};
+$("#cartBtn").onclick=()=>openC(true);$("#cx").onclick=()=>openC(false);$("#shade").onclick=()=>openC(false);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){openC(false);closeM()}});
+
+function checkout(){
+  const t=totals();
+  modal(`<div class="flex justify-between items-center"><h3 class="text-2xl font-extrabold">Checkout</h3><button id="mx" class="btn-o !py-1 !px-3" aria-label="Close">✕</button></div>
+  <div class="grid sm:grid-cols-2 gap-6 mt-5"><div class="card p-4 text-sm"><p class="font-extrabold mb-2">Order summary</p>${st.cart.map(i=>{const p=P[i.id],s=p.s[i.s];return `<div class="flex justify-between gap-2 py-1"><span>${p.n} <span class="text-stone-500">(${s[0]}) × ${i.q}</span></span><b>${inr(s[1]*i.q)}</b></div>`}).join("")}
+  <div class="border-t border-stone-200 mt-2 pt-2 space-y-1"><div class="flex justify-between"><span>Subtotal</span><span>${inr(t.sub)}</span></div>${t.d?`<div class="flex justify-between text-forest"><span>Promo</span><span>−${inr(t.d)}</span></div>`:""}<div class="flex justify-between"><span>Delivery</span><span>${t.ship?inr(t.ship):"Free"}</span></div><div class="flex justify-between font-extrabold text-lg"><span>Total</span><span>${inr(t.total)}</span></div></div></div>
+  <form id="cf" class="grid gap-3" novalidate><div><label for="cn">Full name</label><input id="cn" class="in" autocomplete="name"></div><div class="grid grid-cols-2 gap-3"><div><label for="cp">Mobile</label><input id="cp" class="in" inputmode="numeric" maxlength="10" autocomplete="tel"></div><div><label for="cz">Pincode</label><input id="cz" class="in" inputmode="numeric" maxlength="6" autocomplete="postal-code"></div></div><div><label for="ca">Delivery address</label><textarea id="ca" rows="2" class="in" autocomplete="street-address"></textarea></div>
+  <button class="btn btn-t" type="submit">Place order · ${inr(t.total)}</button><p id="ce" class="text-terra text-sm hidden"></p><p class="text-xs text-stone-500">Demo checkout: no payment is taken and no order is sent.</p></form></div>`);
+  $("#mx").onclick=closeM;
+  $("#cf").onsubmit=e=>{e.preventDefault();
+    const er=!$("#cn").value.trim()?"Enter your full name.":!/^[6-9]\d{9}$/.test($("#cp").value)?"Enter a valid 10-digit mobile number.":!/^\d{6}$/.test($("#cz").value)?"Enter a 6-digit pincode.":$("#ca").value.trim().length<8?"Enter your full delivery address.":"";
+    if(er){$("#ce").textContent=er;$("#ce").classList.remove("hidden");return}
+    const id="PB"+Math.floor(100000+Math.random()*900000),nm=$("#cn").value.trim().split(" ")[0];
+    st.cart=[];st.promo=null;save();renderCart();
+    $("#mb").innerHTML=`<div class="text-center py-8"><p class="text-6xl">🎉</p><h3 class="text-2xl font-extrabold mt-3">Thank you, ${nm}!</h3><p class="text-stone-600 mt-2">Order <b>${id}</b> is confirmed. Total ${inr(t.total)}. We’ll pack it fresh and ship within 24 hours.</p><button id="mx" class="btn mt-5">Continue shopping</button></div>`;
+    $("#mx").onclick=()=>{closeM();openC(false)};
+  };
+}
+
+// static sections
+$("#cmp").innerHTML=COMPARE.map(r=>`<tr class="border-b border-stone-100 last:border-0"><td class="p-4 font-semibold">${r[0]}</td><td class="p-4 text-forest font-extrabold text-xl">✓</td><td class="p-4 text-stone-400 font-bold text-xl">✕</td></tr>`).join("");
+$("#org").innerHTML=ORIGIN.map((o,i)=>`<button class="card h p-5 text-left" data-o="${i}" aria-expanded="false"><div class="flex items-center gap-3"><span class="text-4xl">${o[0]}</span><div><p class="font-extrabold">${o[1]}</p><p class="text-sm text-terra font-semibold">${o[2]}</p></div></div><p class="text-sm text-stone-600 mt-3 hidden">${o[3]}</p><p class="text-xs font-bold text-forest mt-3">Tap to read more</p></button>`).join("");
+$("#org").onclick=e=>{const b=e.target.closest("[data-o]");if(!b)return;const p=b.querySelector("p.text-sm.text-stone-600"),open=p.classList.toggle("hidden")===false;b.setAttribute("aria-expanded",open);b.lastElementChild.textContent=open?"Tap to close":"Tap to read more"};
+$("#rv").innerHTML=REV.map(r=>`<figure class="card p-6 flex flex-col"><div class="flex items-center gap-3"><span class="w-11 h-11 rounded-full grid place-items-center text-white font-bold" style="background:${r[5]}">${r[0].split(" ").map(x=>x[0]).join("")}</span><div><p class="font-bold leading-tight">${r[0]} <span class="text-forest text-xs">✓ Verified buyer</span></p><p class="text-xs text-stone-500">${r[1]}</p></div></div><p class="text-terra mt-3">${stars(r[2])}</p><blockquote class="text-stone-700 mt-2 text-[15px]">${r[3]}</blockquote><figcaption class="mt-auto pt-4"><span class="inline-block bg-cream border border-stone-200 rounded-full text-xs font-semibold px-3 py-1">${r[4]}</span></figcaption></figure>`).join("");
+
+// forms
+$("#bf").onsubmit=e=>{e.preventDefault();
+  const ok=$("#bn").value.trim()&&$("#bc").value.trim()&&/^\S+@\S+\.\S+$/.test($("#be").value);
+  $("#be1").classList.toggle("hidden",!!ok);$("#bo").classList.add("hidden");if(!ok)return;
+  $("#bo").textContent=`Thanks, ${$("#bc").value.trim().split(" ")[0]}. We’ll send the ${$("#bt").value.toLowerCase()} rate card to ${$("#be").value.trim()} within one working day.`;
+  $("#bo").classList.remove("hidden");e.target.reset();};
+$("#nf").onsubmit=e=>{e.preventDefault();const ok=/^\S+@\S+\.\S+$/.test($("#ne").value),m=$("#nm2");m.classList.remove("hidden");
+  m.textContent=ok?"You’re in! Check your inbox for your 15% off code.":"Enter a valid email address.";m.className="text-sm mt-2 font-semibold "+(ok?"text-forest":"text-terra");if(ok)e.target.reset()};
+
+draw();renderCart();
+</script>
+</body>
+</html>
